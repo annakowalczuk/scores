@@ -1,5 +1,5 @@
 .Player {
-  max-width: 250px;
+  width: 300px;
   padding: 5px;
   list-style: none;
   text-align: center;
@@ -8,6 +8,10 @@
   &:nth-child(odd){
     background-color: thistle;
   }
+}
+
+.Player:first-of-type {
+  font-weight: bold;
 }
 
 .Player__name {

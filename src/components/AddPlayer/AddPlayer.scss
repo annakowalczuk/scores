@@ -1,0 +1,23 @@
+.AddPlayer {
+  width: 300px;
+  padding: 5px 0;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+}
+
+.AddPlayer__input {
+  width: 100%;
+  margin-right: 5px;
+
+}
+
+.AddPlayer__submit {
+  text-align: center;
+  cursor: pointer;
+  -webkit-appearance: none;
+
+  &:hover {
+    background-color: lightgray;
+  }
+}

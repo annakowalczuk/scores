@@ -22,9 +22,9 @@ it('renders correct number of players', () => {
 
   const playerComponent = shallow(<PlayerList players={players} />);
 
-  console.log(playerComponent.debug());
+  // console.log(playerComponent.debug());
 
-  const expectedPlayersNumber = playerComponent.find(Player).length;
+  const expectedPlayersNumber = playerComponent.find(Player).length - 1;
   expect(expectedPlayersNumber).toEqual(2);
 
 });
@@ -43,7 +43,7 @@ it('should call onScoreUpdate when onPlayerScoreChange is called', () => {
 
   const mockedOnScoreUpdate = jest.fn();
   const playerComponent = shallow(<PlayerList players={players} onScoreUpdate={mockedOnScoreUpdate} />);
-  const firstPlayer = playerComponent.find(Player).first();
+  const firstPlayer = playerComponent.find(Player).at(1);
   const onPlayerScoreChange = firstPlayer.prop('onPlayerScoreChange');
   onPlayerScoreChange(10);
 

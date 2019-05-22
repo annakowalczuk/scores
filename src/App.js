@@ -1,25 +1,13 @@
 import React from 'react';
 import PlayerList from './components/PlayersList/PlayersList';
+import AddPlayer from './components/AddPlayer/AddPlayer';
 import './App.css';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      players: [
-        {
-          name: 'Anna',
-          score: 3,
-        },
-        {
-          name: 'Michal',
-          score: 2,
-        },
-        {
-          name: 'Rafał',
-          score: 1,
-        },
-      ]
+      players: [],
     }
   }
 
@@ -31,9 +19,19 @@ class App extends React.Component {
     });
   }
   
+  onPlayerAdd = (newPlayerName) => {
+    this.setState({
+      players: this.state.players.concat({
+        name: newPlayerName,
+        score: 0,
+      })
+    });
+  }
+
   render(){
     return (
       <div className="App">
+        <AddPlayer onPlayerAdd={this.onPlayerAdd} />
         <PlayerList players={this.state.players} onScoreUpdate={this.onScoreUpdate} />
       </div>
     );

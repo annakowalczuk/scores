@@ -1,9 +1,15 @@
 import React from 'react';
 import Player from '../Player/Player';
+import './PlayersList.scss';
 
 const PlayersList = (props) => {
   return (
     <ul className="PlayersList">
+      <Player
+        key='0000'
+        name='Name'
+        score='Score'
+      />
       {props.players.map( (item, index) => 
       <Player
         key={index}
